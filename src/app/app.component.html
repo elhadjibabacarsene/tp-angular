@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (searchElement)="getValue($event)"></app-header>
 <app-jumbotron-bien></app-jumbotron-bien>
 
 
 <div class="container">
-  <app-list-biens></app-list-biens>
+  <router-outlet></router-outlet>
 </div>
 
 

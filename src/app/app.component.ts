@@ -10,9 +10,14 @@ export class AppComponent {
   nom = 'Anonymous';
   ok = false;
   message = 'Activer';
+  search = '';
 
   onClickButton() {
     this.message = this.ok ? 'Activer' : 'Désactiver';
     this.ok = !this.ok;
+  }
+
+  getValue(data: string) {
+    this.search = data;
   }
 }

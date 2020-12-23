@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 import {Bien} from '../../bien.interface';
+import {UtilitiesService} from '../../../helpers/utilities.service';
+import {ActivatedRoute} from '@angular/router';
+import {BiensService} from '../../service-biens/biens.service';
 
 @Component({
   selector: 'app-item-biens',
@@ -9,7 +12,8 @@ import {Bien} from '../../bien.interface';
 export class ItemBiensComponent implements OnInit {
   @Input() bien: Bien;
 
-  constructor() { }
+  constructor(private utilitiesService: UtilitiesService) {
+  }
 
   ngOnInit(): void {
   }

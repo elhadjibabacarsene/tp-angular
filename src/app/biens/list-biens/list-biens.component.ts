@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Bien} from '../bien.interface';
+import {BiensService} from '../service-biens/biens.service';
 
 class BienInterface {
 }
@@ -12,25 +13,13 @@ class BienInterface {
 export class ListBiensComponent implements OnInit {
   // Tableau de bien
   biens: Bien[] = [];
+  @Input() searchInput = '';
 
-  constructor() {
-    for (let i = 1; i <= 6; i++) {
-      this.biens.push(
-        {
-          id: i,
-          category: 'Appartement',
-          createAt: new Date(),
-          description: 'Some quick example text to build on the card title and make up the bulk of the content.',
-          image: 'https://source.unsplash.com/1080x720?home&' + i,
-          price: 400000,
-          sale: false, state: 0,
-          title: 'Bien ' + i
-        }
-      );
-    }
+  constructor(private bienService: BiensService) {
   }
 
   ngOnInit(): void {
+    this.biens = this.bienService.getAllBiens();
   }
 
 }

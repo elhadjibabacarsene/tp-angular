@@ -1,11 +1,16 @@
 <div class="card" style="width: 18rem;">
+  <!--  <div [ngClass]="{'card border' : true, 'border-success': bien.sale}" style="width: 18rem;">-->
   <img class="card-img-top" src="{{bien.image}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{bien.title}}</h5>
-      <p class="card-text">{{bien.description}}</p>
-      <hr>
-      <span class="float-left btn btn-sm disabled btn-outline-danger">{{bien.price}}</span>
-      <span class="btn btn-sm text-center disabled">Il y'a 23j</span>
-      <a href="#" class="btn btn-sm btn-primary float-right">Réservez</a>
+    <!--    <span class="text-danger m-0" *ngIf="bien.sale">Déjà vendu</span>-->
+    <p class="card-text">{{bien.description | summarize: 50}}</p>
+    <hr>
+    <span class="float-left btn btn-sm disabled btn-outline-danger">{{ bien.price | separator: ' '}}</span>
+    <span class="btn btn-sm text-center disabled">Il y'a {{bien.createAt | timeLeft}} </span>
+    <a [routerLink]="['/biens/' + bien.id]" class="btn btn-sm btn-primary float-right">Réservez</a>
   </div>
 </div>
+
+
+<!--appHighlight="#5481E5"-->

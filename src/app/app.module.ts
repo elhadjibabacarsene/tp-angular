@@ -22,6 +22,9 @@ import {EditReservationComponent} from './biens/reservation-biens/edit-reservati
 import {AppRoutingModule} from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ErrorsComponent } from './errors/errors.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { ErrorsComponent } from './errors/errors.component';
     EditReservationComponent,
     PageNotFoundComponent,
     ErrorsComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

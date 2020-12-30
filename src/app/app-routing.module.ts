@@ -9,8 +9,14 @@ import {EditReservationComponent} from './biens/reservation-biens/edit-reservati
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuardService} from './services/auth-guard/auth-guard.service';
 import {ErrorsComponent} from './errors/errors.component';
+import {BiensResolverService} from './services/biens-resolver.service';
+import {LoginComponent} from './auth/login/login.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: '',
     redirectTo: '/biens',
@@ -26,7 +32,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'biens/:id',
-    component: DetailBiensComponent
+    component: DetailBiensComponent, resolve: {bien: BiensResolverService}
   },
   {
     path: 'reservations',

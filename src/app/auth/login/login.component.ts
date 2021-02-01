@@ -8,7 +8,16 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('loginForm') myform: NgForm;
-  constructor() { }
+
+  constructor() {
+  }
+  proposerEmail() {
+    const email = 'elhadjibabacarsene@gmail.com';
+    this.myform.setValue({
+      username: email,
+      password: ''
+    });
+  }
 
   ngOnInit(): void {
   }
